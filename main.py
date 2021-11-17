@@ -16,6 +16,12 @@ while running:
         for k, v in enumerate(opcoes):
             print(f'Opção {k + 1} -> {v.capitalize():>5}')
         player = input('\nDigite sua opção:\n>> ').strip().lower()
+
+        if player.isnumeric():
+            player = int(player)
+            player -= 1
+            player = opcoes[player]
+
         if player in opcoes:
             player = opcoes.index(player)
             break
