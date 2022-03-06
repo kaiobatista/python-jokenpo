@@ -18,14 +18,15 @@ while running:
         player = input('\nDigite sua opção:\n>> ').strip().lower()
 
         if player.isnumeric():
-            player = int(player)
-            player -= 1
-            player = opcoes[player]
+            if 1 <= int(player) <= 3:
+                player = int(player)
+                player -= 1
+                player = opcoes[player]
 
         if player in opcoes:
             player = opcoes.index(player)
             break
-        print('\nOpção inválida!\n')
+        print('\n\033[91m[ERRO] Opção inválida! Por favor, tente novamente.\033[m\n')
     sleep(1)
 
     # Análise do vencedor
